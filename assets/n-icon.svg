@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1C1C28"/>
+      <stop offset="100%" style="stop-color:#111119"/>
+    </linearGradient>
+    <linearGradient id="nGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4D4F0"/>
+      <stop offset="100%" style="stop-color:#A0A0BE"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#FFAA4C"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="200" height="200" rx="36" fill="url(#bgGrad)"/>
+
+  <!-- Subtle border -->
+  <rect width="200" height="200" rx="36" fill="none" stroke="#3D3D55" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Ember glow orb bottom-right -->
+  <circle cx="155" cy="155" r="50" fill="#FF6B35" opacity="0.06" filter="url(#softGlow)"/>
+  <!-- Frost glow orb top-left -->
+  <circle cx="45" cy="45" r="40" fill="#8BC4E8" opacity="0.05" filter="url(#softGlow)"/>
+
+  <!-- Letter N — single unified path, all corners smoothed with bezier curves -->
+  <path d="
+    M 57,48
+    Q 50,48 50,55
+    L 50,145
+    Q 50,152 57,152
+    L 65,152
+    Q 70,152 74,143
+    L 126,57
+    Q 130,48 137,48
+    L 143,48
+    Q 150,48 150,55
+    L 150,145
+    Q 150,152 143,152
+    L 135,152
+    Q 130,152 126,143
+    L 74,57
+    Q 70,48 63,48
+    Z
+  " fill="url(#nGrad)"/>
+
+  <!-- Ember accent dot — bottom of left stem -->
+  <circle cx="57" cy="160" r="5" fill="url(#accentGrad)" filter="url(#glow)" opacity="0.9"/>
+</svg>
