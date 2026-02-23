@@ -1,0 +1,238 @@
+:root {
+    /* Foundation */
+    --color-void: #0A0A0F; /* page bg */
+    --color-abyss: #111119; /* code/terminal bg */
+    --color-shadow: #1C1C28; /* cards */
+    --color-dusk: #2A2A3E;    /* nav / sidebar */
+
+    /* Midtones */
+    --color-mist: #3D3D55;    /* borders */
+    --color-slate: #6B6B8A;    /* inactive text */
+    --color-fog: #A0A0BE;    /* secondary text */
+    --color-ghost: #D4D4F0;    /* primary text */
+
+    /* Accents */
+    --color-ember: #FF6B35;    /* CTA / warnings */
+    --color-amber: #FFAA4C;    /* highlights */
+    --color-frost: #8BC4E8;    /* links / info */
+    --color-sage: #7EC8A4;    /* success */ 
+}
+
+/* Basics */
+body {
+    font-family: system-ui,
+        -apple-system,
+        sans-serif;
+    line-height: 1.6em;
+
+    padding: 20px;
+
+    color: var(--color-ghost);
+    background: linear-gradient( 0deg, var(--color-void) 0%, var(--color-shadow) 100%);
+}
+
+a {
+    padding: 10px;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--color-shadow);
+    color: var(--color-fog);
+    transition: 0.3s;
+}
+a:hover {
+    color: var(--color-ghost);
+    box-shadow: 0px 0px 10px var(--color-frost);
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--color-ghost);
+}
+
+/* Nav Bar */
+.nav{
+    position: sticky;
+    top: 0;
+
+    padding: 16px;
+    z-index: 100;
+    
+    background-color: var(--color-dusk);
+
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.nav-logo img:hover{
+    transition: 0.3s;
+    box-shadow: 0 0px 10px var(--color-frost);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+
+/* Header */
+
+.hero {
+    text-align: center;
+    font-size: 1.6em;
+    
+}
+.hero h1 {
+    color: var(--color-ghost);
+}
+.hero p {
+    color: var(--color-fog)
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem 2rem;
+    flex-flow: row wrap
+}
+.hero-buttons button {
+    padding: 20px;
+    font-size: 0.9em;
+
+    color: var(--color-slate);
+    background-color: var(--color-shadow);
+    border-radius: 40px;
+    border-style: none;
+    transition: 0.3s;
+}
+.hero-buttons button:hover {
+    color: var(--color-fog);
+    box-shadow: 0 0px 10px var(--color-sage)
+}
+
+/* Main Content */
+.container {
+    
+    max-width: 1600px;
+    min-height: 100vh;
+
+    margin: auto;
+    
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+
+
+}
+
+/* Presentation of the content */
+.presentation {
+    padding: 10px;
+    margin: auto 20px;
+    line-height: 2.4em;
+
+    max-width: 400px;
+    min-width: 200px;
+
+    justify-self: flex-end;
+
+}
+
+.presentation h1 {
+    color: var(--color-ghost);
+}
+
+.presentation p {
+
+
+    color: var(--color-fog);
+    font-size: 1.4em;
+}
+
+/* Content */
+.content {
+    min-width: 200px;
+    margin: auto 20px;
+    padding: 10px;
+    
+
+    border-radius: 20px;
+    background-color: var(--color-abyss);
+    box-shadow: 0px 0px 5px var(--color-ghost);
+
+}
+
+.content section {
+    border-radius: 16px;
+    padding: 20px;
+    margin: 8px;
+    color: fog;
+    background-color: var(--color-shadow);
+    align-items: center;
+}
+
+.content h2 {
+    color: var(--color-ghost);
+    text-align: center;
+}
+.table {
+    margin:10px;
+    padding: 10px;
+    align-self: center;
+    text-align: center
+}
+
+.cards-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+.card {
+    padding: 20px;
+    margin: 10px;
+
+    background: linear-gradient(45deg, var(--color-mist) 80%, var(--color-amber) 100%);
+    border-radius: 14px;
+    border-width: 10px;
+    border-color: var(--color-void);
+
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    justify-content: center;
+    transition: box-shadow 0.3s, transform 0.5s
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 2px 5px var(--color-amber);
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    color: var(--color-fog);
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.footer-links {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem 2rem
+}
+/* Media Queries */
+
+@media (max-width:550px) {
+    .container {
+        grid-template-columns: 1fr;
+        align-content: center;   }
+
+    .presentation {
+        justify-self: center;
+    }
+} 
